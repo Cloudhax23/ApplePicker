@@ -19,12 +19,12 @@ public class AppleTree : MonoBehaviour
     public float leftAndRightEdge = 25f;
     public GameObject applePrefab;
     public float secondsBetweenApplesDrops = 1f;
-    public float chanceToChangeDirection = 0.1f;
+    public float chanceToChangeDirection = 0.99f;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Invoke("DropApple", 2f);
     }
 
     // Update is called once per frame
@@ -42,7 +42,14 @@ public class AppleTree : MonoBehaviour
     
     void FixedUpdate()
     {
-        if (Random.value < chanceToChangeDirection)
-            speed *= 1;
+        if (1 - Random.value > chanceToChangeDirection)
+            speed *= -1;
+    }
+
+    void DropApple()
+    {
+        GameObject appleObj = Instantiate(applePrefab);
+        appleObj.transform.position = transform.position;
+        Invoke("DropApple", secondsBetweenApplesDrops);
     }
 }
