@@ -1,3 +1,13 @@
+/*
+ * Created by: Qadeem Qureshi
+ * Date Created: 1/31/2022
+ * 
+ * Last Edited by: Qadeem Qureshi
+ * Last Edited: Jan 31, 2022
+ * 
+ * Description: Controls the Apple 
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
